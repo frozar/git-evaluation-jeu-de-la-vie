@@ -2,47 +2,36 @@
 
 Ce projet consiste à créer en Python une simulation du [jeu de la vie de Conway](https://fr.wikipedia.org/wiki/Jeu_de_la_vie). Le programme permet de générer une grille aléatoire ou de lire une grille sur l'entrée standard, puis de calculer son évolution avec des conditions aux limites fixes ou périodiques.
 
-- [Jeu de la vie](#jeu-de-la-vie)
-  - [Introduction](#introduction)
-  - [Objectifs](#objectifs)
-  - [Le fond](#le-fond)
-    - [Les règles du jeu](#les-règles-du-jeu)
-    - [Les conditions aux limites](#les-conditions-aux-limites)
-    - [Les arguments du programme](#les-arguments-du-programme)
-    - [Sortie image](#sortie-image)
-    - [Scénario 1 : exécution sans options](#scénario-1--exécution-sans-options)
-    - [Scénario 2 : génération d'images](#scénario-2--génération-dimages)
-    - [Utilisation en lisant STDIN](#utilisation-en-lisant-stdin)
-      - [Format d'une grille en entrée](#format-dune-grille-en-entrée)
-      - [Sortie texte](#sortie-texte)
-      - [Scénario 3 : évolution d'une grille](#scénario-3--évolution-dune-grille)
-      - [Scénario 4 : grille périodique](#scénario-4--grille-périodique)
-    - [Scénario 5 : génération d'une vidéo](#scénario-5--génération-dune-vidéo)
-    - [Gestion des erreurs](#gestion-des-erreurs)
-  - [La forme](#la-forme)
-    - [Fichiers fournis](#fichiers-fournis)
-    - [Tests automatiques](#tests-automatiques)
-    - [Scénario 6 : intégration continue (bonus)](#scénario-6--intégration-continue-bonus)
-  - [Le travail en groupe](#le-travail-en-groupe)
-    - [L'historique Git attendu](#lhistorique-git-attendu)
-    - [Les messages de commit](#les-messages-de-commit)
-    - [Les Pull Requests](#les-pull-requests)
-  - [Le rendu](#le-rendu)
-  - [Le barème](#le-barème)
-  - [Aides techniques](#aides-techniques)
-    - [Préparer son environnement](#préparer-son-environnement)
-      - [Ubuntu ou Debian](#ubuntu-ou-debian)
-      - [macOS](#macos)
-      - [Windows](#windows)
-      - [Vérifier les outils vidéo](#vérifier-les-outils-vidéo)
-    - [Lecture des arguments avec argparse](#lecture-des-arguments-avec-argparse)
-    - [Le pipe Unix](#le-pipe-unix)
-    - [Commandes Git](#commandes-git)
-    - [Visualisation de l'historique](#visualisation-de-lhistorique)
-    - [Générer une vidéo du jeu de la vie](#générer-une-vidéo-du-jeu-de-la-vie)
-    - [Gource](#gource)
-    - [Découvrir GitHub Actions](#découvrir-github-actions)
-  - [Liens utiles](#liens-utiles)
+- [Introduction](#introduction)
+- [Objectifs](#objectifs)
+- [Programme à réaliser](#programme-à-réaliser)
+  - [Les règles du jeu](#les-règles-du-jeu)
+  - [Les conditions aux limites](#les-conditions-aux-limites)
+  - [Les arguments du programme](#les-arguments-du-programme)
+  - [Entrées du programme](#entrées-du-programme)
+  - [Sorties du programme](#sorties-du-programme)
+  - [Gestion des erreurs](#gestion-des-erreurs)
+  - [Scénarios de vérification](#scénarios-de-vérification)
+- [Contraintes techniques et vérification](#contraintes-techniques-et-vérification)
+  - [Fichiers fournis](#fichiers-fournis)
+  - [Tests automatiques](#tests-automatiques)
+  - [Scénario 6 : intégration continue (bonus)](#scénario-6--intégration-continue-bonus)
+- [Le travail en groupe](#le-travail-en-groupe)
+  - [L'historique Git attendu](#lhistorique-git-attendu)
+  - [Les messages de commit](#les-messages-de-commit)
+  - [Les Pull Requests](#les-pull-requests)
+- [Le rendu](#le-rendu)
+- [Le barème](#le-barème)
+- [Aides techniques](#aides-techniques)
+  - [Préparer son environnement](#préparer-son-environnement)
+  - [Lecture des arguments avec argparse](#lecture-des-arguments-avec-argparse)
+  - [Le pipe Unix](#le-pipe-unix)
+  - [Commandes Git](#commandes-git)
+  - [Visualisation de l'historique](#visualisation-de-lhistorique)
+  - [Générer une vidéo du jeu de la vie](#générer-une-vidéo-du-jeu-de-la-vie)
+  - [Gource](#gource)
+  - [Découvrir GitHub Actions](#découvrir-github-actions)
+- [Liens utiles](#liens-utiles)
 
 ## Introduction
 
@@ -142,7 +131,7 @@ Le groupe démontrera sa capacité à :
 - composer ce programme avec d'autres commandes grâce au pipe Unix ;
 - produire une vidéo du jeu de la vie et une vidéo de l'historique du dépôt.
 
-## Le fond
+## Programme à réaliser
 
 Le programme à réaliser est le fichier `main.py`, placé à la racine du dépôt. Il doit être exécutable avec Python 3 de la façon suivante :
 
@@ -192,7 +181,38 @@ La valeur de `--max_iterations` doit être un entier positif ou nul. La valeur d
 
 Pour vous aider à implémenter ces options, consultez l'aide [Lecture des arguments avec argparse](#lecture-des-arguments-avec-argparse).
 
-### Sortie image
+### Entrées du programme
+
+#### Génération d'une grille aléatoire
+
+Lorsqu'aucune grille n'est fournie sur l'entrée standard, le programme génère une grille aléatoire. L'option `--nb_cells` définit le nombre de cellules par côté et `--seed` fixe la graine du générateur.
+
+Pour une même graine et une même taille, la grille aléatoire générée doit toujours être identique. Pour cela, vous pouvez créer votre propre générateur avec `random.Random(seed)`.
+
+#### Lecture d'une grille sur STDIN
+
+Le programme doit également pouvoir lire une grille depuis l'entrée standard, `STDIN`. Lorsqu'une grille est reçue de cette façon, elle est utilisée comme génération initiale à la place d'une grille aléatoire. Les options `--nb_cells` et `--seed` n'ont alors pas d'effet sur la grille utilisée.
+
+Les scénarios 3 et 4 utilisent un pipe Unix ; son fonctionnement et la lecture de `STDIN` en Python sont expliqués dans l'aide [Le pipe Unix](#le-pipe-unix).
+
+##### Format d'une grille en entrée
+
+La première ligne contient la taille de la grille. Elle est suivie des lignes de la matrice, dont les cellules sont séparées par des espaces. Voici le contenu de `tests/matrix3/input.txt`, utilisé dans les scénarios 3 et 4 :
+
+```text
+3
+1 0 1
+0 0 1
+1 0 1
+```
+
+Cette entrée décrit une grille de 3 lignes et 3 colonnes à la génération initiale.
+
+### Sorties du programme
+
+Le choix du type de sortie est indépendant de l'origine de la grille : une grille aléatoire comme une grille lue sur `STDIN` peut produire une sortie image ou texte.
+
+#### Sortie image
 
 Avec `-t image` (ou lorsque `-t` est omis), le programme écrit un fichier PNG par génération, de la génération initiale `0` à la dernière itération demandée incluse. Le dossier de destination est `outputs` par défaut ; l'option `-o DOSSIER` permet de le changer.
 
@@ -200,9 +220,21 @@ Le nom d'une image respecte obligatoirement le format `grid_XXXX.png`, où `XXXX
 
 La fonction `write_grid` fournie dans `lib.py` permet de transformer une matrice carrée de `0` et de `1` en une image PNG. Vous ne devez pas modifier le comportement de cette fonction.
 
-Pour une même graine et une même taille, la grille aléatoire générée doit toujours être identique. Pour cela, vous pouvez créer votre propre générateur avec `random.Random(seed)`.
+#### Sortie texte
 
-### Scénario 1 : exécution sans options
+Avec `-t text`, aucun fichier image n'est généré : seule la dernière itération demandée est écrite sur la sortie standard, `STDOUT`. La sortie commence par `iteration: N`, où `N` est le numéro de cette itération, puis présente les lignes de la grille, avec des cellules séparées par des espaces.
+
+Aucun autre message ne doit être écrit sur `STDOUT`, car il empêcherait la comparaison automatique du résultat.
+
+### Gestion des erreurs
+
+La gestion des erreurs fait partie intégrante du travail du développeur·se. Le programme doit notamment refuser une grille vide ou mal formée, une cellule différente de `0` ou `1`, une taille non positive, une itération négative et un type de sortie différent de `image` ou `text`.
+
+Lorsqu'une erreur est rencontrée, un message explicite doit être écrit sur la sortie d'erreur, `STDERR`, et le programme doit se terminer avec un code de sortie différent de `0`. Les erreurs d'utilisation des arguments peuvent être prises en charge directement par `argparse`.
+
+### Scénarios de vérification
+
+#### Scénario 1 : exécution sans options
 
 Sans option, le programme utilise les [valeurs par défaut](#les-arguments-du-programme) et crée **21 images dans `outputs`**, de `grid_0000.png` à `grid_0020.png` :
 
@@ -219,7 +251,7 @@ Le programme annonce le nombre d'images produites et leur dossier de destination
 
 La commande `ls -p1 outputs | wc -l` compte les entrées non cachées du dossier. Pour vérifier le nombre d'images dans les scénarios 1 et 2, ce dossier ne doit contenir aucune autre entrée non cachée avant l'exécution. Le fichier caché `.keep` n'est pas compté.
 
-### Scénario 2 : génération d'images
+#### Scénario 2 : génération d'images
 
 Cet exemple utilise une grille de 50 cellules par côté, la graine `4200` et une dernière génération numérotée `200`. Il produit donc 201 images, de `grid_0000.png` à `grid_0200.png` :
 
@@ -232,34 +264,9 @@ $ ls -p1 outputs | wc -l
     201
 ```
 
-### Utilisation en lisant STDIN
-
-Le programme doit également pouvoir lire une grille depuis l'entrée standard, `STDIN`. Lorsqu'une grille est reçue de cette façon, elle est utilisée comme génération initiale à la place d'une grille aléatoire. Les options `--nb_cells` et `--seed` n'ont alors pas d'effet sur la grille utilisée.
-
-Les exemples ci-dessous utilisent un pipe Unix ; son fonctionnement et la lecture de `STDIN` en Python sont expliqués dans l'aide [Le pipe Unix](#le-pipe-unix).
-
-#### Format d'une grille en entrée
-
-La première ligne contient la taille de la grille. Elle est suivie des lignes de la matrice, dont les cellules sont séparées par des espaces. Voici le contenu de `tests/matrix3/input.txt`, utilisé dans les scénarios 3 et 4 :
-
-```text
-3
-1 0 1
-0 0 1
-1 0 1
-```
-
-Cette entrée décrit une grille de 3 lignes et 3 colonnes à la génération initiale.
-
-#### Sortie texte
-
-Avec `-t text`, aucun fichier image n'est généré : seule la dernière itération demandée est écrite sur la sortie standard, `STDOUT`. La sortie commence par `iteration: N`, où `N` est le numéro de cette itération, puis présente les lignes de la grille, avec des cellules séparées par des espaces.
-
-Aucun autre message ne doit être écrit sur `STDOUT`, car il empêcherait la comparaison automatique du résultat.
-
 #### Scénario 3 : évolution d'une grille
 
-À partir de la grille présentée ci-dessus, `-m 1` demande une seule évolution, avec les conditions aux limites fixes utilisées par défaut :
+À partir de la grille présentée dans [Format d'une grille en entrée](#format-dune-grille-en-entrée), `-m 1` demande une seule évolution, avec les conditions aux limites fixes utilisées par défaut :
 
 ```bash
 $ cat tests/matrix3/input.txt | python3 main.py -m 1 -t text
@@ -285,7 +292,7 @@ $ echo $?
 0
 ```
 
-### Scénario 5 : génération d'une vidéo
+#### Scénario 5 : génération d'une vidéo
 
 Les images produites par `main.py` servent à créer une vidéo de l'évolution du jeu de la vie. Générez les images avec votre programme, puis assemblez-les dans l'ordre des générations pour produire un fichier MP4 avec `ffmpeg`. L'assemblage est réalisé par une commande séparée : `main.py` doit produire les images, mais n'a pas à lancer `ffmpeg`.
 
@@ -295,13 +302,7 @@ Le caractère déterministe attendu concerne la grille initiale et son évolutio
 
 Consultez le tutoriel [Générer une vidéo du jeu de la vie](#générer-une-vidéo-du-jeu-de-la-vie) pour les commandes et la section [Le rendu](#le-rendu) pour les exigences de publication et de documentation.
 
-### Gestion des erreurs
-
-La gestion des erreurs fait partie intégrante du travail du développeur·se. Le programme doit notamment refuser une grille vide ou mal formée, une cellule différente de `0` ou `1`, une taille non positive, une itération négative et un type de sortie différent de `image` ou `text`.
-
-Lorsqu'une erreur est rencontrée, un message explicite doit être écrit sur la sortie d'erreur, `STDERR`, et le programme doit se terminer avec un code de sortie différent de `0`. Les erreurs d'utilisation des arguments peuvent être prises en charge directement par `argparse`.
-
-## La forme
+## Contraintes techniques et vérification
 
 Le projet doit être réalisé avec Python 3 en utilisant uniquement des bibliothèques standards et le fichier `lib.py` fourni. Aucune bibliothèque Python externe n'est nécessaire.
 
