@@ -492,7 +492,7 @@ Les images et les vidéos générées peuvent être volumineuses. Elles ne doive
 
 Assurez-vous que le dépôt et les vidéos sont accessibles en public, et non uniquement par les membres du groupe. Pour réaliser les vidéos, consultez les tutoriels [Jeu de la vie](#générer-une-vidéo-du-jeu-de-la-vie) et [Gource](#gource).
 
-**Date de rendu du projet :** Vous devez m'envoyer un mail contenant l'adresse URL de votre dépôt public GitHub avant jeudi 19 novembre 2026, 23h59. Vous perdrez un point par jour de retard.
+**Date de rendu du projet :** Vous devez m'envoyer un mail contenant l'adresse URL de votre dépôt public GitHub avant mardi 24 novembre 2026, 23h59. Vous perdrez un point par jour de retard.
 
 Mon adresse mail : fabien.rozar@gmail.com
 
