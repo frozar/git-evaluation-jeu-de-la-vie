@@ -1,5 +1,5 @@
-# Jeu de la vie
 
+# Jeu de la vie
 Ce projet consiste à créer en Python une simulation du [jeu de la vie de Conway](https://fr.wikipedia.org/wiki/Jeu_de_la_vie). Le programme permet de générer une grille aléatoire ou de lire une grille sur l'entrée standard, puis de calculer son évolution avec des conditions aux limites fixes ou périodiques.
 
 - [Introduction](#introduction)
@@ -70,6 +70,7 @@ Voici la liste des groupes :
    - ASSADILLAH Ahmed
    - RAMAHENINA Anditiana Stéphane
    - SOILIHI Yakinat
+   - KOGOE Essossimna
  - Groupe 6
    - ALI Yanisse
    - MAILLOT Maenice
@@ -103,7 +104,6 @@ Voici la liste des groupes :
  - Groupe 12
    - BROCHARD-VIMBOULY Antoine
    - ABDALLAH Johan
-   - KOGOE Essossimna
    - ZEGHOUDI Mohamed
  - Groupe 13
    - ISMAEL Fred
