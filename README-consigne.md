@@ -496,7 +496,7 @@ Assurez-vous que le dépôt et les vidéos sont accessibles en public, et non un
 
 Mon adresse mail : fabien.rozar@gmail.com
 
-<ins>Remarque :</ins> Je vous encourage vivement de mettre vos collègues en copie du mail de rendu.
+<ins>Remarque :</ins> Je vous encourage vivement à mettre vos collègues en copie du mail de rendu.
 
 ## Le barème
 
