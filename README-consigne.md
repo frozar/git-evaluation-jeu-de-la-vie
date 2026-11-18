@@ -42,41 +42,41 @@ Le développement d'un programme fonctionnel est nécessaire, mais il ne constit
 Chaque membre du groupe doit contribuer de manière régulière et sensiblement équivalente au dépôt. Un projet terminé par une seule personne, puis partagé avec le reste du groupe à la fin du travail, ne répond pas à l'objectif de cette évaluation.
 
 Voici la liste des groupes :
- - Groupe 1
+ - [Groupe 1](https://github.com/mariamafaye8464-ops/git-evaluation-jeu-de-la-vie_groupe-1)
    - FAYE Mariama
    - GNING Aliou
    - GUEYE Seynabou
    - AHMED ATTOUMANI Nizar
    - HOUSSENI Elamine
    - ROBERT Erwan 
- - Groupe 2
+ - [Groupe 2](https://github.com/arthurpayet12-lab/git-evaluation-jeu-de-la-vie_groupe-2)
    - MAILLOT CADET Enzo Amable
    - BOYER John-Lucas
    - PAYET Arthur
    - POUNIANDY Rajan
    - RAVALISON RABOANA Jérémie
- - Groupe 3
+ - [Groupe 3](https://github.com/ZeoYtb/git-evaluation-jeu-de-la-vie_groupe-3)
    - HASSANALY Sania
    - LOUAFI Maya
    - MONTFORT Raphaël
    - PUTTYAH Danish
- - Groupe 4
+ - [Groupe 4](https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4)
    - CADIL Yann
    - GRONDIN Morgan
    - RAYBAUD Marc
    - HOAREAU Hugo
    - OKPEICHA Kolawole Amour Dieudonne
- - Groupe 5
+ - [Groupe 5](https://github.com/azirahmed346-hash/git-evaluation-jeu-de-la-vie_groupe-5)
    - ASSADILLAH Ahmed
    - RAMAHENINA Anditiana Stéphane
    - SOILIHI Yakinat
    - KOGOE Essossimna
- - Groupe 6
+ - [Groupe 6](aliyanisse123-ux/git-evaluation-jeu-de-la-vie-groupe-6)
    - ALI Yanisse
    - MAILLOT Maenice
    - RAZAKAMANANTSOA Herimanantsoa
    - VIRAPIN Dhiessene
- - Groupe 7
+ - [Groupe 7](https://github.com/Raphael-Leopard/git-evaluation-jeu-de-la-vie_groupe-7)
    - COUROUNADIN-MOUNY Maxence
    - GONTHIER Raphaël
    - LENDERS Bryan
@@ -87,25 +87,25 @@ Voici la liste des groupes :
    - PANON Yaël
    - SAID Darsia
    - VONJY Zazirka
- - Groupe 9
+ - [Groupe 9](https://github.com/anaisrichard226-sys/git-evaluation-jeu-de-la-vie_groupe-9)
    - ANDRIAMANANJARA Ranto Ruannah Mialitiana
    - FANOMEZANTSOA Celio
    - RAKOTOMAHARIVO Miangaly Fitia
    - MBAE CHARIF Mounira
    - SHUM-HUNG RAKOTOMANDIMBY Ludovic
- - Groupe 10
+ - [Groupe 10](https://github.com/wissam978/git-evaluation-jeu-de-la-vie_groupe-10)
    - ABASSE Wissam
    - ABDOUL HALECK Faïssa
- - Groupe 11
+ - [Groupe 11](https://github.com/remyaure57-ctrl/git-evaluation-jeu-de-la-vie_groupe-11)
    - ESSOB Alexandre
    - SIMONIN Clément
    - AURE Remy
    - MAILLOT Benoît
- - Groupe 12
+ - [Groupe 12](https://github.com/abrochardv/git-evaluation-jeu-de-la-vie_groupe-12)
    - BROCHARD-VIMBOULY Antoine
    - ABDALLAH Johan
    - ZEGHOUDI Mohamed
- - Groupe 13
+ - [Groupe 13](https://github.com/Younasdjaroudi/git-evaluation-jeu-de-la-vie_groupe-13)
    - ISMAEL Fred
    - DJAROUDI Younas
    - GRONDIN Alexandre
