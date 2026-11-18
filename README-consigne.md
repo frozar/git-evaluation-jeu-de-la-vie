@@ -86,7 +86,11 @@ Voici la liste des groupes :
    - HERINIRINASOA Sariaka
    - PANON Yaël
    - SAID Darsia
-   - VONJY Zazirka
+   - VONJY Zazirka  
+   - Dépôt :
+     - [dépôt 1](https://github.com/yaelpn/Jeu-de-la-vie)
+     - [dépôt 2](https://github.com/yaelpn/Jeu-de-la-vietest)
+     - [dépôt 3](https://github.com/yaelpn/Jeu-de-la-viev2)
  - [Groupe 9](https://github.com/anaisrichard226-sys/git-evaluation-jeu-de-la-vie_groupe-9)
    - ANDRIAMANANJARA Ranto Ruannah Mialitiana
    - FANOMEZANTSOA Celio
